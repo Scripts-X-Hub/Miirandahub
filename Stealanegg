@@ -1,13 +1,1807 @@
--- Lua 5.3+ / Luau compatibility polyfills
-if not math.ldexp then math.ldexp = function(x, n) return x * 2 ^ n end end
-if not math.frexp then math.frexp = function(x)
-    if x == 0 then return 0, 0 end
-    local exp = math.floor(math.log(math.abs(x)) / math.log(2)) + 1
-    local mantissa = x / 2 ^ exp
-    return mantissa, exp
-end end
-if not loadstring and load then loadstring = load end
-if not loadstring then loadstring = function(s) return load(s) end end
 
---[Obfuscated by Hercules v2.0.0 | hercules-obfuscator.xyz/discord | hercules-obfuscator.xyz/source]
-(function(...) local function ctckfj(vabofu)local _=97 end while false do local _=52 break end local vmwzrn=78;if true then local _=22 end local function qzcpfv(ykfbix)local _=90 end local tqsqyb=61;local qqaqug=73;local function vincrh(uicmgr)local _=53 end if false then local _=36 end if false then local _=21 end local thing=3361;local thing2=3361;local counter=0;while thing==thing2 and counter<1 do thing=thing+1;counter=counter+1;if thing==thing2 then local temp=33;temp=temp*2; else do do local _BFR,_MFR,T,E,Pa,GM,RG={["table.insert"]=table.insert,["math.deg"]=math.deg,["string.format"]=string.format,["error"]=error,["math.rad"]=math.rad,["assert"]=assert,["math.cos"]=math.cos,["rawequal"]=rawequal,["math.asin"]=math.asin,["os.difftime"]=os.difftime,["math.abs"]=math.abs,["os.time"]=os.time,["string.char"]=string.char,["string.upper"]=string.upper,["string.find"]=string.find,["type"]=type,["math.sqrt"]=math.sqrt,["table.remove"]=table.remove,["string.len"]=string.len,["next"]=next,["os.clock"]=os.clock,["tostring"]=tostring,["table.concat"]=table.concat,["math.tan"]=math.tan,["table.sort"]=table.sort,["math.acos"]=math.acos,["string.rep"]=string.rep,["getmetatable"]=getmetatable,["math.modf"]=math.modf,["math.min"]=math.min,["math.max"]=math.max,["setmetatable"]=setmetatable,["string.gsub"]=string.gsub,["select"]=select,["math.floor"]=math.floor,["math.exp"]=math.exp,["string.reverse"]=string.reverse,["string.byte"]=string.byte,["math.ceil"]=math.ceil,["string.sub"]=string.sub,["os.date"]=os.date,["pcall"]=pcall,["tonumber"]=tonumber,["rawget"]=rawget,["xpcall"]=xpcall,["string.lower"]=string.lower,["string.gmatch"]=string.gmatch,["math.fmod"]=math.fmod,["math.sin"]=math.sin,["rawset"]=rawset,["string.match"]=string.match,["math.atan"]=math.atan},{},type,error,pairs,getmetatable,rawget;local DG={table=table,string=string,math=math,os=os};local function check() for n,ref in Pa(_BFR)do if ref==nil then E("Tamper Detected! Reason: Critical function removed: "..n);return end if T(ref)~="function" then E("Tamper Detected! Reason: Critical function type changed: "..n.." (was function, now "..T(ref)..")");return end end for tname in Pa(_MFR)do local parts={};for p in tname:gmatch("[^.]+")do parts[#parts+1]=p end local t=DG[(parts[1])];if t then local mt=GM(t);if mt then local mf=RG(mt,parts[2]);if mf then local expected=_MFR[tname];if T(mf)~=expected then E("Tamper Detected! Reason: Metamethod tampered: "..tname);return end end end end end local d=debug;if T(d)=="table" then local _DK={"info","traceback"};for _,k in Pa(_DK)do if T(d[k])~="function" then E("Tamper Detected! Reason: Debug library incomplete");return end end end end check() end local VYCEGdZekg,euHnQEjyO,oRUlxZQBuLZl,dVmUHyCb,hkiRyIEWrEV,SetqQBOqK,SlYoFKcCLZe;VYCEGdZekg=ipairs;euHnQEjyO=pairs;oRUlxZQBuLZl=pcall;dVmUHyCb=tostring;hkiRyIEWrEV=string.char;SetqQBOqK=table.concat;SlYoFKcCLZe=table.insert;local ZJNeWntER={[32]=" ",[33]="!",[36]="$",[46]=".",[47]="/",[48]="0",[49]="1",[50]="2",[51]="3",[52]="4",[53]="5",[54]="6",[55]="7",[56]="8",[57]="9",[58]=":",[65]="A",[66]="B",[67]="C",[68]="D",[69]="E",[70]="F",[71]="G",[72]="H",[73]="I",[74]="J",[75]="K",[76]="L",[77]="M",[78]="N",[79]="O",[80]="P",[81]="Q",[82]="R",[83]="S",[84]="T",[85]="U",[86]="V",[87]="W",[88]="X",[89]="Y",[90]="Z",[95]="_",[97]="a",[98]="b",[99]="c",[100]="d",[101]="e",[102]="f",[103]="g",[104]="h",[105]="i",[106]="j",[107]="k",[108]="l",[109]="m",[110]="n",[111]="o",[112]="p",[113]="q",[114]="r",[115]="s",[116]="t",[117]="u",[118]="v",[119]="w",[120]="x",[121]="y",[122]="z"};local MywLVEfJeOiI=game:GetService((function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[334-(256)]..ZJNeWntER[-151+257]..ZJNeWntER[-291+412]..ZJNeWntER[378-(259)]..ZJNeWntER[686-(587)]..ZJNeWntER[-3+115]..ZJNeWntER[-337+450]),24));local CBHZyOzlejvE=game:GetService((function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[456-(375)]..ZJNeWntER[268-(168)]..ZJNeWntER[-588+699]..ZJNeWntER[258-(151)]..ZJNeWntER[318-(214)]..ZJNeWntER[567-(469)]..ZJNeWntER[-614+736]..ZJNeWntER[-79+194]..ZJNeWntER[-476+576]..ZJNeWntER[783-(684)]..ZJNeWntER[-485+567]..ZJNeWntER[915-(800)]..ZJNeWntER[-366+476]..ZJNeWntER[486-(373)]..ZJNeWntER[491-(369)]..ZJNeWntER[805-(703)]..ZJNeWntER[-573+673]),25));local guokpjSfMcln=game:GetService((function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[613-(530)]..ZJNeWntER[958-(840)]..ZJNeWntER[-736+836]..ZJNeWntER[322-(222)]..ZJNeWntER[-548+657]..ZJNeWntER[-890+972]..ZJNeWntER[-350+450]..ZJNeWntER[-578+691]..ZJNeWntER[-344+461]..ZJNeWntER[-189+293]..ZJNeWntER[700-(602)]..ZJNeWntER[665-(565)]),25));local dtNpWvLUdPRX=MywLVEfJeOiI.LocalPlayer;local DtbJHOXXS=dtNpWvLUdPRX:WaitForChild((function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[518-(443)]..ZJNeWntER[369-(266)]..ZJNeWntER[958-(840)]..ZJNeWntER[539-(423)]..ZJNeWntER[234-(112)]..ZJNeWntER[-590+699]..ZJNeWntER[445-(379)]..ZJNeWntER[-33+145]..ZJNeWntER[-254+354]),21));local VoHTadaP={};if not(10~=10)then oRUlxZQBuLZl(function() local otogyWccuqv=CBHZyOzlejvE:WaitForChild((function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[686-(619)]..ZJNeWntER[381-(259)]..ZJNeWntER[228-(113)]..ZJNeWntER[349-(227)]),25),20);local PXydeGTUrA=otogyWccuqv:WaitForChild((function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[-640+722]..ZJNeWntER[807-(701)]..ZJNeWntER[-700+806]..ZJNeWntER[365-(247)]..ZJNeWntER[735-(628)]..ZJNeWntER[-650+756]),17),20);local mEpHxejngSsK=require(PXydeGTUrA);if type(mEpHxejngSsK)==(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[799-(687)]..ZJNeWntER[-670+789]..ZJNeWntER[-75+195]..ZJNeWntER[790-(686)]..ZJNeWntER[805-(708)]),22)then do(function()VoHTadaP=mEpHxejngSsK.Directory or{}end)()end end end) end local UCwkkaWLPBN={{Name=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[-420+495]..ZJNeWntER[-512+612]..ZJNeWntER[651-(534)]..ZJNeWntER[-708+812]..ZJNeWntER[-270+392]..ZJNeWntER[-261+376]..ZJNeWntER[-257+360]..ZJNeWntER[490-(368)]..ZJNeWntER[947-(838)]),25),Rarity=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[531-(446)]..ZJNeWntER[864-(761)]..ZJNeWntER[-432+539]..ZJNeWntER[-164+265]..ZJNeWntER[880-(783)]..ZJNeWntER[-818+935]),18),Price=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[-134+170]..ZJNeWntER[-906+957]..ZJNeWntER[386-(335)]..ZJNeWntER[-734+783]..ZJNeWntER[-893+979]..ZJNeWntER[-417+464]..ZJNeWntER[207-(107)]),11),Biome=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[-774+843]..ZJNeWntER[-743+859]..ZJNeWntER[-469+569]..ZJNeWntER[-197+317]),19)},{Name=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[-857+937]..ZJNeWntER[922-(813)]..ZJNeWntER[-557+676]..ZJNeWntER[929-(808)]..ZJNeWntER[467-(361)]..ZJNeWntER[-253+285]..ZJNeWntER[476-(395)]..ZJNeWntER[967-(857)]..ZJNeWntER[656-(554)]..ZJNeWntER[-57+160]..ZJNeWntER[663-(555)]..ZJNeWntER[-751+869]),24),Rarity=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[881-(798)]..ZJNeWntER[426-(325)]..ZJNeWntER[492-(387)]..ZJNeWntER[879-(780)]..ZJNeWntER[745-(624)]..ZJNeWntER[430-(315)]),16),Price=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[925-(889)]..ZJNeWntER[-240+289]..ZJNeWntER[193-(138)]..ZJNeWntER[-330+387]..ZJNeWntER[-32+100]..ZJNeWntER[-606+653]..ZJNeWntER[-111+219]),19),Biome=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[-612+698]..ZJNeWntER[602-(483)]..ZJNeWntER[-450+557]..ZJNeWntER[-750+869]..ZJNeWntER[619-(513)]..ZJNeWntER[-494+602]),18)},{Name=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[764-(691)]..ZJNeWntER[-631+734]..ZJNeWntER[231-(123)]..ZJNeWntER[430-(329)]..ZJNeWntER[-347+379]..ZJNeWntER[-441+516]..ZJNeWntER[786-(665)]..ZJNeWntER[-219+326]..ZJNeWntER[-666+773]..ZJNeWntER[-586+695]..ZJNeWntER[-847+961]..ZJNeWntER[-718+820]),24),Rarity=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[522-(456)]..ZJNeWntER[413-(303)]..ZJNeWntER[10+104]..ZJNeWntER[-259+367]..ZJNeWntER[858-(754)]..ZJNeWntER[930-(832)]),25),Price=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp) return(JLkfDYOp>=48 and JLkfDYOp<=57)or(JLkfDYOp>=65 and JLkfDYOp<=90)or(JLkfDYOp>=97 and JLkfDYOp<=122) end)(JLkfDYOp)then local QTbqUmuop if JLkfDYOp>=48 and JLkfDYOp<=57 then QTbqUmuop=((JLkfDYOp-48-vzxiIeMqU+10)%10)+48 elseif JLkfDYOp>=65 and JLkfDYOp<=90 then QTbqUmuop=((JLkfDYOp-65-vzxiIeMqU+26)%26)+65 elseif JLkfDYOp>=97 and JLkfDYOp<=122 then QTbqUmuop=((JLkfDYOp-97-vzxiIeMqU+26)%26)+97 end table.insert(DTeGNOsDq,string.char(QTbqUmuop)) else table.insert(DTeGNOsDq,string.char(JLkfDYOp)) end end return table.concat(DTeGNOsDq) end)((ZJNeWntER[-457+493]..ZJNeWntER[896-(844)]..ZJNeWntER[-221+269]..ZJNeWntER[-367+415]..ZJNeWntER[-803+872]..ZJNeWntER[719-(672)]..ZJNeWntER[198-(89)]),20),Biome=(function(uHgtxOTR,vzxiIeMqU) local DTeGNOsDq={};for i=1,#uHgtxOTR do local JLkfDYOp=uHgtxOTR:byte(i);if(function(JLkfDYOp)
+return (function(...)
+	local p = {
+			"l7-\"u(4m",
+			"l<B&Z(-]b*K",
+			"lH=OO4&OK\'",
+			"lue`W%=ubF",
+			"lIab\':\'%J",
+			"lMbYs)-j/sh7^",
+			"l;ED$n",
+			"l:uW\\E7WL181Ip%\'eVm2@.m",
+			"ltg@m",
+			"l##H4HN7WX@D,e",
+			"l/ef*RS+aAr",
+			"lk[dI1+9T&\\F%o!)",
+			"l_0LC=sL)S",
+			"lk8-(-<ib`",
+			"la?D@",
+			"lluo.C",
+			"lT?H\"2_D%#P.$X",
+			"lq;].d052",
+			"l9@c-",
+			"l[%EV",
+			"l7=HP",
+			"l8T<e",
+			"l)$]\\o",
+			"l;.`>H<\"/t<\\H3N%LT$",
+			"l3RSCDVJ.u4",
+			"lJ5&J",
+			"l)nJTW;GM,df;Htd;$CZ",
+			"l)$]0EXDG!",
+			"l2\"Ph%#.>",
+			"lj\'BN@",
+			"lBuIh6UfYK",
+			"l@<Oe,",
+			"l#Joa#%cjJ,tnT*dZPC6i;.9Omh5n",
+			"lIiu[5",
+			"l&)O94Fld",
+			"lV;=XXr%eF",
+			"lXjg9>KD;Xc",
+			"l895*n&sb^S.AJB2\'\\<",
+			"lHEZ!mQ3GN",
+			"lZE3!/",
+			"le`^GfLl$qA",
+			"l<GgC",
+			"lYK_Qeheg5M,%R7$.ZYm]",
+			"ld/72<\'B7:FZfG",
+			"llu</.C!E",
+			"lnhmQT2!",
+			"lK0To8",
+			"l89WdO",
+			"lTG>_*/1ZU]",
+			"lRZSo.U>+\'C\\P>",
+			"lYRdZ]M@FbT=C^IL0;9",
+			"lM9K4N<%#",
+			"lJ@4CgnmIPOOXg",
+			"lXl6<]]<Sd",
+			"le\'tLkF\'!",
+			"ll<tY^",
+			"l]7hsC[p+",
+			"l5B]R-9^Y",
+			"lp%chcO/",
+			"l#mZC)#\';j&XhC8`",
+			"l$`bQ",
+			"l#$UIl",
+			"lH?H1iX=``",
+			"l`P",
+			"lZ<^m",
+			"l#+Iqi(&k",
+			"lD4r`iIP",
+			"lnpk5",
+			"lk4be+S5",
+			"l/`*^BR>",
+			"l`Es@H?p",
+			"ls*QDr5_L!r*J_n[Os-N.DR",
+			"lO)I4dYLH#/",
+			"l8&XF-X*",
+			"ltPOs*Tm!GD,\\5]]",
+			"l+it%D7nNu4_N2SG",
+			"lrYN",
+			"l/q\'3UV1@CEj<u)QDB0k+",
+			"lX#>eb",
+			"llc[%28]H`=",
+			"l0T3PBa$oR*[bGp",
+			"lHgS8G9^Hr",
+			"l]VjEs\"Zj",
+			"lfKI@",
+			"l;ANkqckK",
+			"l.F",
+			"ll[KR+Gd7",
+			"l4R\\o",
+			"lJ2-30OQ8",
+			"l:@+3",
+			"lH$cWo8P0b[_Nk-2",
+			"l#WGOZ",
+			"lZ)0-",
+			"lLYS_)F>p",
+			"l;Rf+f3io!",
+			"l8@>\\O_s/",
+			"l8#d8D",
+			"lPJbWsfQVcd>7H",
+			"lkMidfB8E;[#Ql=8",
+			"lRmP\"HOJGc\"esY8Iql?>K4Y7IKC<9R1WZ/0(pN[CkIitOX9ik)Jd$2R7h>",
+			"l_VL_qi\'l",
+			"l0SR=J",
+			"l\"%s-7#FY",
+			"lM3crjY;bo",
+			"l)$]%G8&5hM#Y`Q",
+			"lQ]-;P",
+			"l0=\'Brk\"hU*+X+#i",
+			"l&2Ga-",
+			"l3LNM",
+			"l?j[F53/S",
+			"lMi=VYeM+^mDG!",
+			"l3Zb>JdH:",
+			"lt-AHUhLU2$C9lV5M@P4",
+			"ldDg.",
+			"l7^VZ",
+			"lmnk1",
+			"lX-h&",
+			"lsF;Vh`8`]Tj/f8g$-/@7<\"Pj_m?[",
+			"l:.b\\e",
+			"lhh@N5MmVT",
+			"lj02`G(e[1OK]/[qQ1#",
+			"l9ET@q\\b&",
+			"llPN1%%A:_*\\\'EY].N(",
+			"l*#:P4u5uX",
+			"l9cPpm_`\"",
+			"l3q_`3,NN]fbauYg",
+			"l+H#b;FF",
+			"l[PXll",
+			"lsT]d&",
+			"l)$]Yj_)",
+			"lGcs-r`$p1=2!",
+			"l,me<65rmM=#-G29?H5gR&[`4>F@2T?@#C",
+			"l,Abk7j\\@9]N`c*7Nb55h8c)Lr-G",
+			"ld8bZ",
+			"lc2j0=",
+			"lCi9Lj;A",
+			"lF4/;",
+			"ltj6)",
+			"lj1(\\KtspWD)R4DS",
+			"l(RH72_l1LT\'AaMQ",
+			"l\\6dRaW-Za546#<9*\'1",
+			"l%CdV/",
+			"l3(P?9G-j",
+			"l*k_:Wts<p)>\\-aedas/Q",
+			"lW+lun",
+			"lE&@J+0#\'h",
+			"l=PU+\'tAV",
+			"lQeN&",
+			"lc,=iiS0BJS",
+			"lT]ar8aU",
+			"lO][FsnG%W",
+			"l2>kWc",
+			"le_/,,Qeg\"&3P]\"m.eWO&\'!V[aY*k",
+			"l\\./;m_8<F0*t<+KTP",
+			"lHfDpp87",
+			"lWS?gP)2",
+			"lrh?Ni%gM`=eGP",
+			"l%D\"1n5Gf",
+			"l\\>VH7_P>UX]hN8pCd3U8nNu3",
+			"lDW*<#XQ_6e#Wt",
+			"lhp?HB8>B0sO;6gF",
+			"lh;5+tDW*@652W!e&Ro",
+			"lGRA>",
+			"lX3J;*8_W`",
+			"l#60kSXZi_4hp,W`",
+			"lpZso",
+			"lXl@9mMfu1%qh",
+			"lnXlX",
+			"lKTQq\",>D0\"e:8",
+			"l;/3n+ln",
+			"l%J(7",
+			"l5QZ;^",
+			"l<13i8X*",
+			"l8P>;l#W!",
+			"lpD3FC,d\":IY^i&>)7$[",
+			"lOqZ0cB)m",
+			"lp0dQ=aN%",
+			"lDa;MG\\Ut`<Z3",
+			"l\\gTFl2q>8nOUXB:",
+			"lXhm\"EXB0F,2qJtU8c+",
+			"lr:c^lV3Q",
+			"lp$,R",
+			"l?1Ba",
+			"lAR]fcLLW*B]5;[ne`",
+			"lbA-Oo.F",
+			"lt,YX@",
+			"l`-Tqfcg\'G,YimR.PpL<gdb-",
+			"lD:R.",
+			"l_;1n2DQUsZ.A(A+",
+			"lHHc:]23p\".0?",
+			"l@WRJ`",
+			"l6T.8)>p\"24po^!g>DX:i",
+			"lb1mF3PJ]6O",
+			"labiAt50X",
+			"l\"6O=jJbl",
+			"l?MiJ[%n",
+			"lV6lfH5RSGq<?T-3q$H4Y",
+			"lsgr4(Uc>__Vbu",
+			"l]WL%c",
+			"l.&&L.(/",
+			"lf0EO[8d!i,",
+			"l.&&L.",
+			"lY+=A/\'?",
+			"l.T_QbY!",
+			"l?UMf(",
+			"lYHd9NO\'H",
+			"l\\fpdV*VK-GBQE",
+			"l7!^mrL9_b",
+			"llH",
+			"l`0EG",
+			"lP*DeH@.FO/R`7",
+			"lAXIkYlp?Ht8hTH!4YMZ",
+			"l3rHnk",
+			"l#rW#RZ3",
+			"lON#I\"+fN",
+			"lJ7$F\'bRZWW@/i",
+			"l5:4nSDL:lDHoc=#*)f",
+			"l+f7C_",
+			"lXeYm",
+			"l92s*.pF",
+			"l]Q(C",
+			"lD\'<HE",
+			"l`$FD^LltDY&4#,T\\PtJ:*V7>R%Ab",
+			"l*6QJJ",
+			"l1*_WW\'7o>e",
+			"lE.sIRMnXekV[@",
+			"l>7haY",
+			"lc-pU\\KG",
+			"lU\"-bu1S3[j\'^;WKT$&",
+			"lBigb\\EHt#%W,[$dU0-XK",
+			"lH#Qb(=p_",
+			"l59b[Q*.&X)&nTP:\',b",
+			"l\\g.G^XYF2\',Y/a>p%0",
+			"lb9Wch",
+			"l\'lJXtH4e3ICfOW^",
+			"lrm>G;3B",
+			"l*,DbhQP",
+			"lQi/7nU)\":",
+			"l,6C`Q?-D8]",
+			"l0=moLq9f-",
+			"l^^J0SRQCTSrOY",
+			"lb8%W_",
+			"l0AY^Aik^+f$Q",
+			"l_1<fY/Ja:\'>&cKCJn5>",
+			"l2AcSRIVc+",
+			"ld2/YTln",
+			"l>HPA",
+			"l0AR.rkOgg3)oMl[_TsN",
+			"l4MMM@(9$jm",
+			"l[qD<,*Ps=",
+			"l5JnVW#D37f.GUPWhP",
+			"lXutep7nh\'+_8#.k",
+			"l@)rY`@g#*C0WPd?hTT!",
+			"lC2qP",
+			"lH?nc*8&E",
+			"l\"8*sk:5a",
+			"lp+H74rh",
+			"lQA17EitJ36",
+			"l5cPQ\"#qZc,",
+			"lu=GaLP6.&",
+			"lDdi.ARV\\,r",
+			"lsHP^U&P0<",
+			"ln\'ce+",
+			"llOf-?$,m8d",
+			"lV0PT_\'\"",
+			"l;ZV\'d",
+			"lP1)Rn+VKW",
+			"lSigI,r;G66B1F",
+			"lVFVq`Q&#]",
+			"lKq$4Zc(g><?Og",
+			"l8XcZ6\'`$PJ\\jX-DhHC",
+			"l7%g=SU;bH_Sq1N",
+			"l7#a)D8E-",
+			"l;\"/XH",
+			"l?<5`[l\\#8->Z:eRE51",
+			"l.oK)@NfW",
+			"lGr%IK=M?%p:0Ul%%B",
+			"lcr.Y4D/!%7\"]6t]k)J[",
+			"l:!6JlQ*2e93uH-f`(:_W",
+			"l^Z!@",
+			"l&OuBm:<T",
+			"l#U88d2s>",
+			"l&DGrs",
+			"lOpIn^",
+			"l#ZW1B2q&/+9A)&B(5",
+			"l3+J:WN-aH",
+			"lmPA83ap",
+			"ll6)8,$st",
+			"leGgP",
+			"lcWK-84Jh",
+			"l",
+			"lm=i\'",
+			"ltdeCfUR>\"",
+			"l\'Rtud85hc",
+			"l5A<a",
+			"l7IbEam%_LA^bX5G.?UEH[qpQm_\"TT7fg<+$$lf<,eHAOf7qfJ;O-T",
+			"l]:3iW*p",
+			"l@jG%",
+			"lT@jb<lUF\"$j\\",
+			"l/=7D3mm",
+			"l(ScAd7f=oM&^lH0\')",
+			"l`*PLC",
+			"l*tO5/PKobj`M[",
+			"lT_C7?0e^",
+			"l^Y)O&QdDKulH",
+			"lGmpr",
+			"l83l-c",
+			"l\"e\\0(b#S*",
+			"lY_,J7tAqr",
+			"l_\'==+(Z:Eg]jZ.",
+			"l1;V\'jm260SK(i",
+			"lhpqp@2T>/!DO5\'5",
+			"laeT$",
+			"l%#4%j)N8aCC?Le#d2mT!",
+			"ldm2(8\'$TTQWHrdo2+/H\\",
+			"lt.D8SG9<?nb@aEV$Q",
+			"lhgQ3gcDQml",
+			"lG/I57\\B1dZH#=NfaJL(\"",
+			"lU`k+%ft0$5ZuURR;hY",
+			"lP^>2#",
+			"lTsnUB2`K`R&d<kN857",
+			"lj>7ZC",
+			"l8&5Hq",
+			"l5?G+!.7i",
+			"lPMKTjebG\\,k&,>>",
+			"ll>Qr",
+			"lrgO$Y%(XP@G-4O",
+			"lPD\\p7U40Tts.M\\AP*7E\"^p",
+			"l8,Ei27hq",
+			"l1Bsk\'>!5",
+			"lM.4>9k8m4EcYE",
+			"lQcS\\@jqG",
+			"l\"5IjJ\'\"",
+			"l0%rbn59",
+			"lQ0M%",
+			"llB",
+			"l#!J5K-QV:7e_)\'tcp1",
+			"lHWSai#D4OY9P#)4Xl",
+			"l9q..:&G",
+			"l@XnH80?",
+			"l8/+-",
+			"l-=PZU&VO",
+			"lEjo1TqM=",
+			"lt`_\'JLjI",
+			"loD.+#s=F6",
+			"lGH]F)t`H",
+			"lo!LLG7s?l]a*4",
+			"l$\"7CG^-#",
+			"l-%Z,s,Ou!",
+			"lu-^mY",
+			"lDd,nHk*N",
+			"lieA>-cXt0V",
+			"lYZkuB,*@//",
+			"lN8XYjrfEDRLn",
+			"lS*#g.",
+			"lE9P[",
+			"lJ=+9mfP",
+			"lNN!`9qHFYcUMl",
+			"l,+>!@,4ci",
+			"l3X#q",
+			"l5P,&\'Cl\\",
+			"lnHGt`k*@4@tKoX",
+			"l7@M`K]KgpXMetMM,Q",
+			"l$OD0<9f+l",
+			"l@[TY)Ht*",
+			"l[lPN)",
+			"l/[RV",
+			"lZDmd5o/",
+			"l4SNo*S>I",
+			"l2Odg\\IF,$G",
+			"lUbp,M",
+			"lHFe_G*.@#h7f^KQ",
+			"l@?F\"\"2BYP",
+			"l_=pP$Oae;GWDVh",
+			"ltD\"OfTF@,6",
+			"l`KH4$bYJ76#&calRK^2",
+			"ltPR@X",
+			"ld=RM[_F(",
+			"lVBIo89LbMKd_LNPN1RKrJ/",
+			"lqJ\'b7",
+			"lKG4YmL:1<$p%J\':86125:+BF+3@)\"_ph%(6idh`:B:Dq4t6\"`;0+UK%Yt",
+			"lM%u]",
+			"lKI>$M",
+			"lt9FI\"ENM=?E3",
+			"l]?%^",
+			"l7e7!N$(_D",
+			"l:(Z`FWG?",
+			"l7Q/QZ#\'G=<",
+			"loH_ME]R",
+			"l(a\\d",
+			"l1<)!j",
+			"l,Qe-u-j]t",
+			"l5r3$J",
+			"lsKn(",
+			"l?R*=/^p",
+			"l5$nge",
+			"luT,<",
+			"lGE%NtuK2`",
+			"lAkE\\8iWL,@AnfUg@-\"Cd",
+			"l\'Apd>/^7#",
+			"l-CPf@48/6s^+:tT",
+			"l/MA56Wl]",
+			"lsK3\'D",
+			"ldbLI\"_)T",
+			"l[[H8d`_",
+			"lI9r\"g#)o",
+			"lqRf$V0Od",
+			"l3&ER41F\\P",
+			"l;W^i1mm:G",
+			"l$I9]",
+			"lVc/HJq[?=pZ(ppVkl%b",
+			"l84Kfu@oF[",
+			"lApSS",
+			"loN/F*",
+			"l+Cl`EDFU.D5L_hV",
+			"l8CR*I&dipg_<<?6",
+			"lT0kq%oA;",
+			"l\'lih\'-+EH",
+			"l0aet`PDM",
+			"lI\"(*TZ^<u",
+			"lK7HRGl\\g",
+			"lne&Z8",
+			"l+!_Gd",
+			"llrZ]",
+			"l&\'J2&",
+			"l0a;h1",
+			"lo+LegdU&Bb:(DLU/UJ",
+			"l40cd",
+			"l@J5^<ah`DgC)b!h[\"",
+			"l)T&+A",
+			"lpTMPrUU4",
+			"l.A=6U-Ls",
+			"lHXQn\"",
+			"lh$\"42$gFG",
+			"lOcU!DtB",
+			"lH4+E2jeX",
+			"lmN;DhRHR)ruK\\VZ;,N*D",
+			"lBloXd(35N#",
+			"l-sdAI",
+			"lTe<X",
+			"lAFf]",
+			"lhpsH@7J?<2JWh<IGrDn`/\'23k7s0",
+			"l46t\"VJ#I+",
+			"l,4<hqZP%/@H>F=704e",
+			"l$c4%",
+			"l3R3l?q^p?",
+			"lK/s[\')$+Y[",
+			"l7XM#+",
+			"lFOW6p",
+			"lY<&Ws0Ks",
+			"lV^amkc7",
+			"lG\'dB/i5DlXD`&,",
+			"lZ)P\\/",
+			"lE2<R)BrAUc/qH.]I?hZ",
+			"l&D)\\W@b)/jYo/m",
+			"l@4&$D",
+			"l^o:ut\\>:.L/l\\pjiggY?GP",
+			"lQW$rFoG",
+			"lo<o-E",
+			"lXf>&C9F",
+			"loU+A4E*M;eZD),,OY_X",
+			"lBXLY8QAse$10$L88,I",
+			"lK&;ZWO5mPZj;db_pm",
+			"l)[$W",
+			"lDYnc4DYn:c8#T[o&d@",
+			"l\"cG-1nhtrcQD-6&VHN#5",
+			"lP_K1",
+			"lr]efULEe",
+			"l.A0VE_8V[$_?",
+			"l@Lu5?YpRJ",
+			"l`j-e/f:c6+i;,VGA:<U,",
+			"l0`OR#",
+			"lcC&!!EM1Y",
+			"laR[R",
+			"lDWL\'O2E<MGDk\'cu5P",
+			"l.N(H&",
+			"ln@I.",
+			"l1\\NAc$[j6",
+			"lE\\U)!GV^",
+			"lB)#D1\\uV\"j*+nib2hL",
+			"lH[NEMTo3M)A1I",
+			"l,J%)^..",
+			"lk1WtP",
+			"l>I/\'X\\=jAV:De",
+			"loWU+XDff",
+			"ljjfKqrQ",
+			"l#\'H6!^=Rj",
+			"l?;)*sP\\\\",
+			"lD*uS",
+			"lLGg(#",
+			"li;",
+			"l2OX^p=Z$",
+			"l>=.f0U#Y</u\'+U",
+			"l1+W>_Ufl\"",
+			"lCmXe\"6a:",
+			"l8FL%\\FCUq737erMFdfc",
+			"lm$i\'OXd^a8Bc1$f7Boq;k[#a-*,5",
+			"l4rei",
+			"lEeB!F7oT(V",
+			"lU=lOa)2",
+			"ls>!N=",
+			"l=scu",
+			"lK6F4$W\\#",
+			"l>A<,",
+			"lFi+U1;$h^KC[A",
+			"lLk\"#J",
+			"lslO;S9uHI",
+			"lJ_(ph.7Hae\"dX[",
+			"liC\",_ARF6a",
+			"lH?H<?9j<",
+			"l?^ac-=:\\H>\\E=U1C5",
+			"l>BC8U",
+			"l7mD[lcq^k;&[Z(a",
+			"lLr-@dR$W",
+			"l/2$?>",
+			"l9q@]a9m",
+			"l:]p1",
+			"lMs<<$UH8<S_!_p-eM3+R",
+			"laPQ?UU>^+S",
+			"l2?]be",
+			"lG]b8uKat",
+			"lpsnrI",
+			"l8CR*(XQY#/#O8bc",
+			"l8_B359EQ9C",
+			"lqc_(LU$Ig99P.0\"",
+			"l]G!5#",
+			"lRD$U#",
+			"lE\".=[9(mg230!",
+			"l)0(2@aF(S",
+			"l4!&g#mfQr/TC0bQ\\3",
+			"lta20XRBM4,\\B",
+			"l1?j=tPnb_Ycn4",
+			"li;&e[",
+			"ld?3=r]b#r>@CQ;",
+			"lR\\]KRP=nD",
+			"l[m^<",
+			"lMoo=YkmGcl(pD,es6+M",
+			"lZDcqNPR02",
+			"ljmUj@",
+			"lZ4Ar@nLAM(_LD))UF",
+			"l@1fsW;QS",
+			"leT",
+			"lXO4%",
+			"l]d0^k3$&>[",
+			"l0=?h&Y14P9FPUt,Fq!",
+			"l#B]-o8/EgL#.A9?_>Y",
+			"l]1lck",
+			"l<rV\\.bIQ",
+			"lc)-`.aM\"J5",
+			"l4bSf2&,0X#EU^J?Y4_;s76CRGPLd",
+			"l.MCbteT",
+			"l7Z/\'l\":I\'",
+			"l9ETH35BiE",
+			"lGc)=h3<S",
+			"lFJ?,6S5-m",
+			"l\'^!]d9*BbZDOf3C",
+			"lOes\":U/BM.*\"V@J",
+			"lD(@f;q+YSg]j*",
+			"l$(11<4\'",
+			"l_ee,M",
+			"lN$TT:41\"W",
+			"l]PNR&uPLGPFPG4e>!",
+			"l9&RAk&ecdrIGfrGQCUiJDpT+Ie0p",
+			"lOmk;",
+			"l3pIpAHU",
+			"l80cs#",
+			"l0q>r",
+			"llQ^SrK4AK?",
+			"l6;%beGnT\'",
+			"l8BZ*#eN0SV[eZ56*%5QQlZQ;,%hi,,1ADS!#80E?5^V@\"s>:QPJWN4+pF",
+			"l8/a8KHgK+,X0?lM_R\"",
+			"l\"=NbH2T/L_J(+B<(IWb",
+			"l-bbqa4)\\&M",
+			"lqF8,=?af[g^ZA*",
+			"lN\'*R`,Q",
+			"lO!MRYs4j/ce%tn:@PF6VUF",
+			"lfA]4FruRn",
+			"l@@@K",
+			"lT(Qmd\\uK",
+			"l[a#Z!",
+			"lW3@a",
+			"ljj*i,0Eu*)X^",
+			"lS\"RqRHnO]Z",
+			"lpb#6.I!C9C$Fi",
+			"lXS6$lA)=p",
+			"liWUbpY.gSkTei",
+			"l<3Jd",
+			"l^YaHmrN>(f_*n",
+		};
+	local function Q(Q)
+		return p[Q - (475071 - 447652)];
+	end;
+	for Q, h in ipairs({ { 493486418 % 10499711, -530629 - (-531217) }, { -803948 + 803949, 150839 + -150816 }, { 934904 + -934880, 851999 - 851411 } }) do
+		while h[-386101 - (-386102)] < h[187229 + -187227] do
+			p[h[1433139247 % 7238077]], p[h[639513 - 639511]], h[-750987 - (-750988)], h[514730 + -514728] = p[h[998216018 % 6837096]], p[h[236865 - 236864]], h[-182209 - (-182210)] + (850877 + -850876), h[-150337 - (-150339)] - (592450 - 592449);
+		end;
+	end;
+	do
+		local Q = string.char;
+		local h = type;
+		local f = string.len;
+		local S = math.floor;
+		local D = {
+				G = 2270100643 % 10089336,
+				c = -359996 + 360021,
+				m = 863043188 % 4272491,
+				["5"] = 619947000 % 7749337,
+				d = -960527 + 960563,
+				J = 2621600729 % 10362058,
+				i = 1414276289 % 6766872,
+				["+"] = 522683 - 522655,
+				I = -689260 - (-689310),
+				["8"] = 591487645 % 9388692,
+				A = 436661315 % 2646432,
+				S = 913649 - 913629,
+				p = 53 - 41,
+				["/"] = 926083 - 926029,
+				b = -389845 + 389849,
+				["3"] = -329655 - (-329665),
+				C = -584220 - (-584258),
+				U = -808689 - (-808734),
+				v = 1980831419 % 16645642,
+				l = 656746437 % 3333738,
+				N = 1880232244 % 15286441,
+				g = 545088960 % 4504867,
+				f = -699463 - (-699505),
+				["9"] = 115748212 % 480283,
+				["0"] = -200379 + 200439,
+				T = 1583618807 % 11392941,
+				j = 956777 + -956753,
+				["6"] = -832201 - (-832233),
+				y = 691411 - 691353,
+				Z = -102613 + 102626,
+				X = -165465 + 165513,
+				O = 274202489 % 3862006,
+				W = 751989 - 751973,
+				h = 617749 + -617734,
+				["7"] = 71944 + -71913,
+				q = 535524 + -535507,
+				F = 840550 - 840547,
+				["1"] = 827551 + -827549,
+				R = 367775 + -367764,
+				o = -670242 - (-670303),
+				a = 2394637886 % 9774032,
+				M = 65062598 % 10843759,
+				L = 2006467753 % 11665510,
+				Q = 780809 - 780795,
+				K = 650594 - 650589,
+				s = -585753 - (-585775),
+				E = -457605 + 457657,
+				e = 657872 + -657842,
+				k = 938843662 % 4135875,
+				u = 808258 + -808196,
+				z = 749062566 % 3201122,
+				P = -598770 - (-598804),
+				B = 106087131 % 809825,
+				["2"] = 1477682313 % 6626378,
+				r = 354515247 % 6008732,
+				x = 2479574833 % 10374790,
+				["4"] = 285841885 % 12427906,
+				Y = 883778 - 883752,
+				D = -99000 + 99029,
+				w = -695918 + 695945,
+				t = 55412577 % 1086520,
+				H = -772871 - (-772910),
+				n = 641078856 % 2554099,
+				V = -867941 - (-867941),
+			};
+		local k = table.insert;
+		local Y = table.concat;
+		local U = {
+				p = -369781 - (-369853),
+				["8"] = 98692 - 98655,
+				["0"] = 1202730604 % 7517066,
+				["!"] = 48078 - 47994,
+				["<"] = 848789 + -848722,
+				["?"] = 724970 + -724913,
+				["$"] = 569859403 % 15401604,
+				f = 418573 + -418495,
+				[";"] = 1045915 + -1045901,
+				T = 145638231 % 1348502,
+				["["] = 461146723 % 15901609,
+				["@"] = -485524 + 485533,
+				W = 111043047 % 15863281,
+				["="] = 320433 + -320384,
+				d = 839378 + -839307,
+				K = -530535 + 530596,
+				j = -241333 - (-241392),
+				["-"] = 837158 - 837079,
+				_ = 571612941 % 8050886,
+				[":"] = 32846641 % 6569313,
+				l = 265540 + -265529,
+				[")"] = 134470508 % 1430537,
+				["5"] = 1632521313 % 10203258,
+				M = 878533309 % 10098084,
+				[","] = 892554 + -892508,
+				Y = 145825 - 145772,
+				C = 100001311 % 8333442,
+				H = -562719 - (-562740),
+				b = 144867749 % 13169795,
+				s = 2155250177 % 13815706,
+				["*"] = 747142 + -747103,
+				N = -78985 + 79053,
+				t = 40044289 % 8008852,
+				["7"] = 238877173 % 9555086,
+				["\""] = -50068 + 50070,
+				B = -653664 - (-653739),
+				m = -526290 + 526371,
+				["/"] = -346417 - (-346422),
+				Q = 497466301 % 9949325,
+				["^"] = 413919256 % 2019118,
+				[">"] = 1008537329 % 11592383,
+				["#"] = 116405 - 116374,
+				["6"] = -161817 - (-161899),
+				R = -635473 - (-635515),
+				O = 15195 - 15170,
+				J = 362559850 % 2705670,
+				["&"] = -32660 - (-32694),
+				["3"] = 8859 - 8839,
+				o = 477167 - 477115,
+				r = 2875812343 % 13960254,
+				n = -293835 - (-293883),
+				h = 687233 - 687209,
+				a = -455340 - (-455343),
+				F = 502452 - 502398,
+				S = 90628343 % 12946900,
+				["2"] = -83370 - (-83387),
+				["1"] = 693647218 % 8563545,
+				X = 684997 - 684965,
+				g = -73458 - (-73541),
+				V = 186513437 % 3008280,
+				u = -713773 - (-713823),
+				["+"] = 867147 - 867119,
+				["]"] = -473775 - (-473815),
+				["\\"] = 201716574 % 14408324,
+				D = 258184452 % 3688349,
+				["`"] = 486518 - 486449,
+				["4"] = -546420 + 546465,
+				Z = -36070 + 36144,
+				c = 463831 - 463767,
+				G = 914259615 % 5540967,
+				E = 80518 - 80453,
+				U = -682077 - (-682095),
+				e = -213781 + 213794,
+				I = -742208 - (-742214),
+				["("] = -895855 + 895871,
+				q = -598318 - (-598328),
+				k = -113550 - (-113550),
+				["\'"] = 30392168 % 2762922,
+				["9"] = 275547198 % 12524871,
+				L = 55867 + -55820,
+				["."] = 1715308274 % 15179719,
+				A = 2173237140 % 13415044,
+				["%"] = 876014591 % 5309179,
+				P = -266987 + 267050,
+				i = -214994 + 215052,
+			};
+		local Z = string.sub;
+		local H = p;
+		for p = -996982 + 996983, #H, 790518 - 790517 do
+			local s = H[p];
+			if h(s) == "string" then
+				local h = Z(s, 272581882 % 8260057, -643392 + 643393);
+				if h == "h" then
+					s = Z(s, -669921 - (-669923));
+					local h = f(s);
+					local U = {};
+					local b = 320349 - 320348;
+					local J = 94138614 % 10459846;
+					local x = -842668 + 842668;
+					while b <= h do
+						local p = Z(s, b, b);
+						local f = D[p];
+						if f then
+							J = J + f * ((205886902 % 2394033) ^ (((427531 + -427528) - x)));
+							x = x + (-18915 - (-18916));
+							if x == 940435813 % 10112213 then
+								x = -485355 + 485355;
+								local p = S(J / (-24048 - (-89584)));
+								local h = S((J % (-57838 - (-123374))) / (-644577 - (-644833)));
+								local f = J % (1012533 + -1012277);
+								k(U, Q(p, h, f));
+								J = 1867875636 % 16384874;
+							end;
+						elseif p == "=" then
+							k(U, Q(S(J / (-884058 - (-949594)))));
+							if b >= h or Z(s, b + (416036 - 416035), b + (-47595 + 47596)) ~= "=" then
+								k(U, Q(S((J % (1335616945 % 16488289)) / (-76141 - (-76397)))));
+							end;
+							break;
+						end;
+						b = b + (-175942 + 175943);
+					end;
+					H[p] = Y(U);
+				elseif h == "l" then
+					s = Z(s, -357388 - (-357390));
+					local h = f(s);
+					local D = {};
+					local b = 485567 + -485566;
+					while b <= h do
+						local p = (h - b) + (-888198 - (-888199));
+						local f = p >= 37265552 % 12421849 and 1446521796 % 10115537 or p;
+						local Y = 1005549 - 1005549;
+						local H = f > -398897 - (-398898);
+						for p = 742799 + -742799, 507356 - 507352, 300263 + -300262 do
+							local Q;
+							if p < f then
+								local h = Z(s, b + p, b + p);
+								Q = U[h];
+								if not Q then
+									H = false;
+									break;
+								end;
+							else
+								Q = -4569 + 4653;
+							end;
+							Y = Y * (1373402885 % 13734028) + Q;
+						end;
+						if H then
+							local p = S(Y / (1580139550 % 17969682)) % (487139986 % 2108830);
+							local h = S(Y / (1989314112 % 9996224)) % (-563533 - (-563789));
+							local U = S(Y / (214275547 % 9316317)) % (1371526691 % 9458803);
+							local Z = Y % (-746709 + 746965);
+							if f == -591725 - (-591730) then
+								k(D, Q(p, h, U, Z));
+							elseif f == 2371466140 % 14548872 then
+								k(D, Q(p, h, U));
+							elseif f == -668898 + 668901 then
+								k(D, Q(p, h));
+							elseif f == -303282 + 303284 then
+								k(D, Q(p));
+							end;
+						end;
+						b = b + f;
+					end;
+					H[p] = Y(D);
+				end;
+			end;
+		end;
+	end;
+	return (function(Y, p, D, k, U, f, S, K, o, H, x, y, e, q, s, N, b, Z, g, J, I, X, h, C)
+		N, J, o, s, H, e, X, g, q, h, x, K, y, C, Z, I, b = function(p, Q)
+				local f = J(Q);
+				local S = function(S, D, k, Y, U, Z)
+						return h(p, {
+							S,
+							D,
+							k,
+							Y,
+							U,
+							Z,
+						}, Q, f);
+					end;
+				return S;
+			end, function(p)
+				for Q = -808902 + 808903, #p, 454156 - 454155 do
+					H[p[Q]] = 480780823 % 6967838 + H[p[Q]];
+				end;
+				if S then
+					local h = S(true);
+					local f = k(h);
+					f[Q(378327 - 350857)], f[Q(2395722250 % 16522033)], f[Q(-443425 + 470997)] = p, x, function()
+							return -2725120 - (-995920);
+						end;
+					return h;
+				else
+					return D({}, { [Q(-70370 + 97835)] = x, [Q(-64629 + 92099)] = p, [Q(675191552 % 15003644)] = function()
+							return -2565344 - (-836144);
+						end });
+				end;
+			end, function(p, Q)
+				local f = J(Q);
+				local S = function(S, D, k, Y, U, Z, H, s, b)
+						return h(p, {
+							S,
+							D,
+							k,
+							Y,
+							U,
+							Z,
+							H,
+							s,
+							b,
+						}, Q, f);
+					end;
+				return S;
+			end, function()
+				b = 1068512584 % 15947949 + b;
+				H[b] = -141318 + 141319;
+				return b;
+			end, {}, function(p, Q)
+				local f = J(Q);
+				local S = function()
+						return h(p, {}, Q, f);
+					end;
+				return S;
+			end, function(p, Q)
+				local f = J(Q);
+				local S = function(S, D)
+						return h(p, { S, D }, Q, f);
+					end;
+				return S;
+			end, function(p, Q)
+				local f = J(Q);
+				local S = function(S, D, k, Y)
+						return h(p, {
+							S,
+							D,
+							k,
+							Y,
+						}, Q, f);
+					end;
+				return S;
+			end, function(p)
+				H[p] = H[p] - (396756 - 396755);
+				if 932746 + -932746 == H[p] then
+					H[p], Z[p] = nil, nil;
+				end;
+			end, function(h, S, D, k)
+				local W, HX, v, w, d, P, G, n, R, YX, pX, fX, sX, O, y, J, x, z, c, r, U, JX, u, t, E, NX, qX, j, SX, CX, eX, F, T, ZX, B, yX, xX, l, hX, a, H, i, kX, bX, M, DX, A, V, L, UX, m, QX, b;
+				while h do
+					if h > 8351756 - (-737042) then
+						if 44430 + 12119648 > h then
+							if h < -590642 + 10832569 then
+								if 10441377 - 656008 > h then
+									if h < 1450072518 % 11525885 then
+										if 2789942301 % 13116846 > h then
+											h = U and 9252417 - 235177 or -552485 + 14384434;
+										elseif 8700011 - (-502588) > h then
+											y, F, u, d, x, H, J, b = S[-369037 + 369042], 413980 + 17826729758545, Q(-90624 + 118454), S[-794246 + 794252], S[63453388 % 450024], S[1037899 + -1037898], S[-212558 + 212561], S[307374610 % 5038928];
+											U = p[u];
+											P = Z[D[386185 - 386184]];
+											a = Q(-1015624 - (-1043154));
+											t = Z[D[-293934 - (-293936)]];
+											T = t(a, F);
+											u = P[T];
+											F, a = 28887117640773 - (-540742), Q(-752089 - (-779662));
+											h = U[u];
+											P = Z[D[1205553921 % 4709195]];
+											t = Z[D[-151443 + 151445]];
+											T = t(a, F);
+											u = P[T];
+											U = h(u);
+											c, u = -151815 + 17055957413901, U;
+											U = Z[D[1255307095 % 11731842]];
+											P = Z[D[-85700 - (-85702)]];
+											T, a = Q(-68883 - (-96478)), -281608 + 4305284748252;
+											t = P(T, a);
+											T = Q(279593 - 251909);
+											h = U[t];
+											U = 141114 + -141113;
+											u[h] = U;
+											U = Z[D[-154522 + 154523]];
+											a = 173858 + 17106528876539;
+											P = Z[D[-546410 + 546412]];
+											t = P(T, a);
+											h = U[t];
+											U = J;
+											u[h] = U;
+											U = Z[D[1001341 + -1001340]];
+											a, T = 16525132460898 - (-191149), Q(462147 - 434694);
+											P = Z[D[591564262 % 8103620]];
+											t = P(T, a);
+											h = U[t];
+											T, U, a = Q(1021439 - 993458), x, 24746136041526 - 494387;
+											u[h] = U;
+											U = Z[D[272228 - 272227]];
+											v = Q(783310527 % 5802095);
+											P = Z[D[-226196 - (-226198)]];
+											t = P(T, a);
+											h = U[t];
+											U = b;
+											u[h] = U;
+											a = -542361 + 15431488971434;
+											U = Z[D[-1018813 + 1018814]];
+											P = Z[D[400233 + -400231]];
+											T = Q(1030862 - 1003309);
+											t = P(T, a);
+											h = U[t];
+											t = Q(513144346 % 12515034);
+											P = p[t];
+											T = Z[D[675953001 % 5407624]];
+											a = Z[D[401938162 % 6183664]];
+											F = a(v, c);
+											t = T[F];
+											U = P[t];
+											t, T, a = 1063253442 % 4991799, 1244598387 % 15178026, 1755214005 % 11701425;
+											P = U(t, T, a);
+											u[h] = P;
+											T = Q(550812207 % 12517824);
+											U = Z[D[-63725 + 63726]];
+											P = Z[D[-252260 + 252262]];
+											a = 25379021809351 - (-34659);
+											t = P(T, a);
+											h = U[t];
+											t, P, a = -106792 - (-106806), h, Q(607542 + -580053);
+											U = y or t;
+											u[h] = U;
+											P = Z[D[330146389 % 5002218]];
+											F = 30337933253750 - 58695;
+											t = Z[D[-1041913 + 1041915]];
+											T = t(a, F);
+											U = P[T];
+											t = h;
+											h, P = d and 245006 + 11142727 or 367217500 % 14136535, d;
+										else
+											h = U and -581693 + 12957859 or 387240 + 182329;
+										end;
+									else
+										if 5307005859 % 22542554 > h then
+											h = Z[D[-174800 + 174801]];
+											H = Z[D[870731 + -870729]];
+											y = -822765 + 25285013994475;
+											b = Z[D[-1002312 - (-1002315)]];
+											x = Q(1009540270 % 8555190);
+											J = b(x, y);
+											U = H[J];
+											H = 4764868 - (-648421) < -727547 + 15895263;
+											h[U] = H;
+											U = Q(309431 - 281573);
+											h = p[U];
+											h = h and 2933634794 % 22834939 or -921591 + 4513163;
+										elseif 2290020576 % 11069730 > h then
+											x = {};
+											U, h = x, 889897351 % 10580613;
+										else
+											U, h, b, J, H = {}, p[Q(273803 + -246040)], nil, nil, nil;
+										end;
+									end;
+								else
+									if h > 3850986958 % 16920342 then
+										if h < 3168223773 % 24293000 then
+											H = Z[D[392741821 % 4620492]];
+											U = #H;
+											H = -1018915 - (-1018915);
+											h = U == H;
+											h = h and 58022276 % 7302699 or 448073 + 14264395;
+										else
+											l = Q(-32338 + 60168);
+											B = p[l];
+											E = Q(-641601 - (-669323));
+											R = Z[J];
+											A = Z[b];
+											z = 964046 + 17239414008205;
+											M = A(E, z);
+											l = R[M];
+											h = B[l];
+											L, hX, r = Q(2839530927 % 16225732), Q(-444433 - (-472169)), 25365368496285 - (-986502);
+											R = Z[J];
+											z = 7.4208851904155e+14 % 4524930041105;
+											A = Z[b];
+											E = Q(391377 + -363630);
+											M = A(E, z);
+											l = R[M];
+											z, E = -337654 + 28910825986956, 522788 + 1612299176138;
+											B = h(l);
+											M, n = Q(-332831 - (-360656)), Q(509623 + -482091);
+											l = Z[J];
+											R = Z[b];
+											A = R(M, E);
+											h = l[A];
+											R = Z[J];
+											E = Q(290030516 % 6041726);
+											A = Z[b];
+											M = A(E, z);
+											l = R[M];
+											j = 373061 + 20386092348368;
+											B[h] = l;
+											M, E = Q(593060 - 565511), 34089373408213 - (-582189);
+											l = Z[J];
+											R = Z[b];
+											A = R(M, E);
+											m = -377809 + 28051027080919;
+											h = l[A];
+											l, E = 14617270 - 1043737 <= -462474 + 4204307, -781536 + 28369365082234;
+											B[h] = l;
+											DX = 21864011239771 - (-841322);
+											l = Z[J];
+											R = Z[b];
+											M = Q(340863971 % 6955846);
+											A = R(M, E);
+											h = l[A];
+											M, l = Q(413434575 % 3062274), 1422507560 % 5878130;
+											B[h] = l;
+											W = 316603 + 13021002089204;
+											l = Z[J];
+											E = 17276036221931 - 928895;
+											R = Z[b];
+											A = R(M, E);
+											h = l[A];
+											l = P;
+											B[h] = l;
+											h = nil;
+											l = s();
+											A = Q(814104977 % 4448509);
+											Z[l] = h;
+											R = p[A];
+											M = Z[J];
+											E = Z[b];
+											z = E(L, W);
+											A = M[z];
+											h = R[A];
+											O, L = Q(-295577 + 323191), Q(410833 + -383163);
+											M = Z[J];
+											W = -516107 + 26250838216651;
+											E = Z[b];
+											ZX = 26309650125830 - 681003;
+											z = E(L, W);
+											A = M[z];
+											L = Q(151032962 % 3145948);
+											R = h(A);
+											A = s();
+											Z[A] = R;
+											h = Z[A];
+											M = Z[J];
+											E = Z[b];
+											W = 413758 + 17519000162207;
+											z = E(L, W);
+											R = M[z];
+											z = Q(-50765 + 78407);
+											E = p[z];
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											z = L[i];
+											W = 582013 - 582013;
+											M = E[z];
+											i, L, z = 200254 - 199734, -357054 - (-357384), 197725094 % 2017603;
+											E = M(z, L, W, i);
+											h[R] = E;
+											m, W, L = 907277 + 8202769790686, 16691831255300 - (-978264), Q(-830647 + 858464);
+											h = Z[A];
+											M = Z[J];
+											E = Z[b];
+											z = E(L, W);
+											R = M[z];
+											n, z = Q(83407 + -55972), Q(490491 + -462849);
+											E = p[z];
+											CX = -807481 + 1880220603812;
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											z = L[i];
+											m = 27007148146707 - 233203;
+											M = E[z];
+											L, i, W, z, JX = -963937 + 963542, 218296 + -218556, -465844 + 465844.5, 49852489 % 6231561, 798716 + 30206743201526;
+											E = M(z, L, W, i);
+											h[R] = E;
+											n = Q(2866222014 % 14850748);
+											h = Z[A];
+											W = -361774 + 14192118226686;
+											M = Z[J];
+											L = Q(258474291 % 1943207);
+											E = Z[b];
+											z = E(L, W);
+											R = M[z];
+											z = Q(352575940 % 4519846);
+											E = p[z];
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											z = L[i];
+											M = E[z];
+											L, W, z = -854889 + 854912, 2146108169 % 11922823, 790180 + -790156;
+											E = M(z, L, W);
+											h[R] = E;
+											h = Z[A];
+											L = Q(282090 + -254111);
+											M = Z[J];
+											E = Z[b];
+											W = -611781 + 20735482968956;
+											z = E(L, W);
+											R = M[z];
+											M = 476164 - 476164;
+											h[R] = M;
+											h = Z[A];
+											W = 10577979803926 - 1029593;
+											M = Z[J];
+											L, n = Q(-951643 - (-979573)), Q(-187230 - (-214708));
+											E = Z[b];
+											z = E(L, W);
+											R = M[z];
+											M = B;
+											h[R] = M;
+											R = Z[A];
+											M, z = 61780 + -61762, Q(2267581799 % 9487673);
+											h = v(R, M);
+											m = 9649505932378 - (-48435);
+											R = Z[A];
+											E = p[z];
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											z = L[i];
+											W = 1094433856 % 11167692;
+											M = E[z];
+											L, z, i = 3412645342 % 14160354, -479475 - (-479545), 14438227473726 - (-976133);
+											E = M(z, L, W);
+											m, n, M = 815392 + 30963360286514, Q(301801887 % 1423463), 943679103 % 7259070;
+											h = c(R, E, M);
+											W, M = Q(240708044 % 9627205), Q(741939 + -714109);
+											R = p[M];
+											E = Z[J];
+											z = Z[b];
+											L = z(W, i);
+											i, W = 14883263053567 - (-203795), Q(265757450 % 1795471);
+											M = E[L];
+											h = R[M];
+											E = Z[J];
+											z = Z[b];
+											L = z(W, i);
+											M = E[L];
+											R = h(M);
+											M = Z[J];
+											W = 26756035979159 - 947948;
+											E = Z[b];
+											L = Q(511503531 % 5879033);
+											z = E(L, W);
+											h = M[z];
+											z = Q(766618 - 738976);
+											E = p[z];
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											z = L[i];
+											n, i, sX, L, W = Q(-566014 - (-593475)), -136199 + 136267, 32130896743167 - 561293, -394180 + 394162, 216750 + -216750;
+											M = E[z];
+											z = 358739461 % 3985994;
+											E = M(z, L, W, i);
+											R[h] = E;
+											L, W = Q(520459 - 493032), 7.5565613089056e+14 % 4445036119475;
+											M = Z[J];
+											E = Z[b];
+											z = E(L, W);
+											h = M[z];
+											z = Q(-370008 + 397650);
+											E = p[z];
+											m = 7003151995535 - 624082;
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											z = L[i];
+											L = 820543 - 820534;
+											M = E[z];
+											W, z, i = 647195 + -647195, 1567791388 % 13515443, -433494 - (-433502);
+											E = M(z, L, W, i);
+											R[h] = E;
+											M = Z[J];
+											E = Z[b];
+											L, W = Q(355927165 % 2045398), 12834945645789 - (-629371);
+											z = E(L, W);
+											h = M[z];
+											z, n, m = Q(435901 - 407949), Q(-887866 + 915289), 29824048081818 - (-461477);
+											E = p[z];
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											z = L[i];
+											W, L = 1410601659 % 9467125, 1188851137 % 12256197;
+											M = E[z];
+											z = 662030 - 662001;
+											E = M(z, L, W);
+											W = 424510 + 2156712036782;
+											R[h] = E;
+											M = Z[J];
+											i, pX = 344915 + 34674105433023, 769226 + 16729147875748;
+											E = Z[b];
+											L = Q(422757 + -395202);
+											z = E(L, W);
+											W, L = 31556584681740 - 128934, Q(-198108 + 226091);
+											h = M[z];
+											M = -1043322 + 1043322;
+											R[h] = M;
+											M = Z[J];
+											E = Z[b];
+											z = E(L, W);
+											h = M[z];
+											M = Z[A];
+											R[h] = M;
+											M = 945225 + -945212;
+											h = v(R, M);
+											E = Z[J];
+											z = Z[b];
+											W = Q(741702 - 713731);
+											L = z(W, i);
+											m = Q(412389929 % 2193415);
+											M = E[L];
+											L = Q(2616430938 % 12578862);
+											z = p[L];
+											W = Z[J];
+											i = Z[b];
+											n = i(m, j);
+											L = W[n];
+											E = z[L];
+											W, n, i, j, L = 360830992 % 2713014, 819796 + -819766, 1441212026 % 14269426, Q(318536323 % 1305364), -649643 - (-649643);
+											z = E(L, W, i, n);
+											W = Q(-7423 + 35065);
+											L = p[W];
+											i = Z[J];
+											n = Z[b];
+											m = n(j, r);
+											n = -144891 + 144891;
+											W = i[m];
+											E = L[W];
+											m, i, W = 666770 - 666763, 33522356 % 1596301, -87226 - (-87226);
+											L = E(W, i, n, m);
+											E, m = 346857 + -346837, Q(620680 - 593016);
+											n = p[m];
+											j = Z[J];
+											r = Z[b];
+											w = r(O, pX);
+											m = j[w];
+											i = n[m];
+											w, O = Q(-901080 + 929050), 24911015912971 - 850107;
+											m = Z[J];
+											j = Z[b];
+											r = j(w, O);
+											n = m[r];
+											W = i[n];
+											j = -943522 + 10455603132582;
+											h = V(R, M, z, L, E, W);
+											M = h;
+											E = Z[J];
+											W = Q(62587 - 34976);
+											z = Z[b];
+											qX, i = 9769615938009 - 540692, -221008 + 26977669402722;
+											L = z(W, i);
+											h = E[L];
+											L = Q(438600 + -410648);
+											z = p[L];
+											W = Z[J];
+											m = Q(2368096857 % 13378921);
+											i = Z[b];
+											n = i(m, j);
+											L = W[n];
+											E = z[L];
+											W, i, L, j = 952207 - 952162, -961732 + 961787, 496596 + -496341, 20162660730595 - (-662985);
+											z = E(L, W, i);
+											M[h] = z;
+											W, i = Q(505145 + -477506), 2.5244993399429e+15 % 23816031647570;
+											E = Z[J];
+											z = Z[b];
+											m = Q(398907 + -370978);
+											L = z(W, i);
+											h = E[L];
+											L = Q(1309784880 % 5116238);
+											z = p[L];
+											W = Z[J];
+											i = Z[b];
+											n = i(m, j);
+											L = W[n];
+											W = -811166 + 811166;
+											E = z[L];
+											i, L = -423971 + 423971, 1728526981 % 8192071;
+											z = E(L, W, i);
+											w = -330965 + 18269036998160;
+											M[h] = z;
+											E = Z[J];
+											i = 27731636500585 - (-981512);
+											z = Z[b];
+											W, yX, r = Q(185176159 % 2848435), Q(782708 - 755028), -390892 + 11229127379800;
+											L = z(W, i);
+											W, pX = Q(648157 + -620440), Q(-883468 + 911101);
+											h = E[L];
+											E = -663669 - (-663669);
+											M[h] = E;
+											E = Z[J];
+											z = Z[b];
+											i = -298190 + 1652647546831;
+											L = z(W, i);
+											j, W = Q(747860884 % 11161686), Q(8441 + 19223);
+											h = E[L];
+											L = p[W];
+											i = Z[J];
+											n = Z[b];
+											m = n(j, r);
+											W = i[m];
+											z = L[W];
+											m = Q(1574093014 % 15432013);
+											W = Z[J];
+											i = Z[b];
+											j, kX = 10066265295402 - (-657445), Q(-128542 - (-156348));
+											n = i(m, j);
+											L = W[n];
+											E = z[L];
+											M[h] = E;
+											z = Z[J];
+											i, n = Q(247990447 % 10331787), -501645 + 29703674453396;
+											L = Z[b];
+											W = L(i, n);
+											E = z[W];
+											j, W = Q(1713557014 % 12599478), Q(809634726 % 3200028);
+											L = p[W];
+											r = 27920959697924 - 475451;
+											i = Z[J];
+											n = Z[b];
+											m = n(j, r);
+											n = 3340053110 % 16292942;
+											W = i[m];
+											r, m, i = Q(528481431 % 12289625), -753126 + 753156, -839593 + 839648;
+											z = L[W];
+											W = 491412610 % 5521490;
+											L = z(W, i, n, m);
+											i, QX = Q(2300240472 % 15437670), -314819 + 8711420042651;
+											W = p[i];
+											n = Z[J];
+											m = Z[b];
+											j = m(r, w);
+											i = n[j];
+											z = W[i];
+											j, i, m, n = -111039 - (-111046), 577584 + -577584, -475426 + 475426, 919805 + -919639;
+											W = z(i, n, m, j);
+											j, z = Q(-712422 + 740086), 394531 - 394511;
+											m = p[j];
+											r = Z[J];
+											w = Z[b];
+											O = w(pX, QX);
+											j = r[O];
+											O = Q(320664697 % 13359877);
+											n = m[j];
+											j = Z[J];
+											r = Z[b];
+											pX = -140060 + 19743735170821;
+											w = r(O, pX);
+											m = j[w];
+											i = n[m];
+											h = V(R, E, L, W, z, i);
+											r = 19289399125243 - 623077;
+											z = Z[J];
+											E, SX, QX, n, j = h, Q(480235 + -452299), 14265819833756 - (-308311), 3820146870240 - (-48914), Q(-859515 + 886961);
+											L = Z[b];
+											i = Q(787846 - 760134);
+											W = L(i, n);
+											h = z[W];
+											W = Q(1523918740 % 6194678);
+											L = p[W];
+											i = Z[J];
+											n = Z[b];
+											m = n(j, r);
+											W = i[m];
+											n = 749362 + -749107;
+											z = L[W];
+											i, r, W = 2566524527 % 12339059, 18258375317583 - (-51431), 784108 - 783853;
+											L = z(W, i, n);
+											E[h] = L;
+											n, i = -208874 + 29393241220449, Q(-578754 + 606274);
+											z = Z[J];
+											L = Z[b];
+											W = L(i, n);
+											h = z[W];
+											w, j, W = -44462 + 14037364426550, Q(-839231 + 867234), Q(820956 - 793004);
+											L = p[W];
+											i = Z[J];
+											n = Z[b];
+											m = n(j, r);
+											NX = Q(-76237 - (-103843));
+											W = i[m];
+											z = L[W];
+											i, n, W = -539306 + 539306, -367989 + 367989, -988265 - (-988265);
+											L = z(W, i, n);
+											E[h] = L;
+											i = Q(-503798 + 531463);
+											z = Z[J];
+											n = 703526 + 34172661056002;
+											L = Z[b];
+											W = L(i, n);
+											h = z[W];
+											z = -414766 + 414766;
+											E[h] = z;
+											HX = Q(326263 - 298378);
+											z = Z[J];
+											i = Q(-791786 + 819672);
+											L = Z[b];
+											n = 20964904326977 - 373023;
+											W = L(i, n);
+											i = Q(170943 - 143279);
+											h = z[W];
+											r = Q(2361613658 % 11749184);
+											W = p[i];
+											n = Z[J];
+											m = Z[b];
+											j = m(r, w);
+											i = n[j];
+											r = 3433316923496 - 569898;
+											L = W[i];
+											i = Z[J];
+											bX, j = Q(-999362 + 1027066), Q(375685 - 347852);
+											n = Z[b];
+											m = n(j, r);
+											n = Q(2871858023 % 16600176);
+											W = i[m];
+											m = 60902 + 27968055264505;
+											z = L[W];
+											E[h] = z;
+											w = 523022 + 26872310134227;
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											z = L[i];
+											i, r = Q(582991 - 555349), Q(-688976 - (-716566));
+											W = p[i];
+											n = Z[J];
+											m = Z[b];
+											j = m(r, w);
+											i = n[j];
+											j, n = -889903 + 889921, -94207 - (-94187);
+											L = W[i];
+											i, m, O = -425493 + 425494, -133104 + 133104, -205148 + 33257365118426;
+											W = L(i, n, m, j);
+											n = Q(1960269276 % 8377101);
+											i = p[n];
+											pX = 33752516507044 - (-640961);
+											m = Z[J];
+											w = Q(-969407 + 997068);
+											j = Z[b];
+											r = j(w, O);
+											n = m[r];
+											O, m, r = 920020 + 15326487482892, 392595 - 392585, 663938446 % 15440428;
+											L = i[n];
+											j, n = -862509 + 862509, 517639 - 517639;
+											i = L(n, m, j, r);
+											L, w, n, fX = 856643 + -856634, 23244523036303 - (-68537), Q(2423739345 % 11541485), 862809 + 11377186925144;
+											h = V(R, z, W, i, L);
+											z, m, r = h, -642579 + 30124768429278, Q(661907590 % 4694183);
+											L = Z[J];
+											W = Z[b];
+											i = W(n, m);
+											h = L[i];
+											i = Q(-470392 + 498344);
+											W = p[i];
+											n = Z[J];
+											m = Z[b];
+											j = m(r, w);
+											i = n[j];
+											L = W[i];
+											n, m, i = 661473604 % 8480429, -522714 + 522864, 50643733 % 12660897;
+											W = L(i, n, m);
+											z[h] = W;
+											L = Z[J];
+											w, n = Q(74757216 % 1115365), Q(338048 - 310377);
+											W = Z[b];
+											m = 32747098035146 - (-550855);
+											i = W(n, m);
+											n = Q(-431849 + 459513);
+											h = L[i];
+											i = p[n];
+											m = Z[J];
+											j = Z[b];
+											r = j(w, O);
+											n = m[r];
+											W = i[n];
+											n = Z[J];
+											r, w = Q(-928470 + 956343), -65841 + 13425520548252;
+											m = Z[b];
+											j = m(r, w);
+											i = n[j];
+											r = 132659 + 14291874993100;
+											L = W[i];
+											W = Q(2911234635 % 15736253);
+											z[h] = L;
+											L = p[W];
+											j = Q(-99510 - (-127365));
+											i = Z[J];
+											n = Z[b];
+											m = n(j, r);
+											YX = -976376 + 18352143370073;
+											W = i[m];
+											h = L[W];
+											r = -360035 + 5053131720596;
+											i = Z[J];
+											O, j = 443390 + 24747476871429, Q(31109 + -3240);
+											n = Z[b];
+											m = n(j, r);
+											W = i[m];
+											w = Q(901709629 % 3725959);
+											L = h(W);
+											m = Q(1229028592 % 7778485);
+											W = Z[J];
+											j = -949994 + 5218818508904;
+											i = Z[b];
+											n = i(m, j);
+											h = W[n];
+											n = Q(-65293 - (-92935));
+											i = p[n];
+											m = Z[J];
+											j = Z[b];
+											r = j(w, O);
+											n = m[r];
+											j, m = -423468 + 423469, -798840 + 798822;
+											W = i[n];
+											w, n, r = Q(592349 + -564898), 2378356663 % 14958218, -804685 + 804540;
+											i = W(n, m, j, r);
+											L[h] = i;
+											W = Z[J];
+											m = Q(-362694 + 390185);
+											i = Z[b];
+											j = 151531 + 28869148157080;
+											n = i(m, j);
+											h = W[n];
+											n = Q(1304710394 % 5096417);
+											i = p[n];
+											m = Z[J];
+											j = Z[b];
+											O = -706990 + 25381479659481;
+											r = j(w, O);
+											j = 886495 + -886495;
+											n = m[r];
+											W = i[n];
+											m, n, r = 914822 + -914813, 302912 - 302912, -615368 - (-615448);
+											i = W(n, m, j, r);
+											L[h] = i;
+											j = 17294742093370 - (-598331);
+											W = Z[J];
+											m = Q(1294467558 % 13075147);
+											i = Z[b];
+											n = i(m, j);
+											h = W[n];
+											W, j = -108900 - (-108901), 338659 + 30521795234977;
+											L[h] = W;
+											W = Z[J];
+											i = Z[b];
+											m = Q(-977426 - (-1005364));
+											n = i(m, j);
+											h = W[n];
+											W, m, w = 168711 - 168711, Q(-593113 - (-620742)), 25041097301324 - (-118848);
+											L[h] = W;
+											j = 803335 + 1426233032849;
+											W = Z[J];
+											i = Z[b];
+											n = i(m, j);
+											h = W[n];
+											W, m = -992500 - (-992503), Q(-399368 + 427025);
+											L[h] = W;
+											r = Q(336230527 % 1593379);
+											W = Z[J];
+											j = 27361009273164 - 628616;
+											i = Z[b];
+											n = i(m, j);
+											i = Q(-76289 + 104119);
+											h = W[n];
+											W = Z[A];
+											L[h] = W;
+											W = p[i];
+											n = Z[J];
+											m = Z[b];
+											j = m(r, w);
+											r, w = Q(315734 - 288166), 490597 + 29347192568060;
+											i = n[j];
+											h = W[i];
+											n = Z[J];
+											m = Z[b];
+											j = m(r, w);
+											i = n[j];
+											j = Q(153894 + -126348);
+											W = h(i);
+											i = Z[J];
+											O = Q(1254666786 % 13347223);
+											n = Z[b];
+											r = 10445673007771 - (-198757);
+											m = n(j, r);
+											h = i[m];
+											m = Q(-383 - (-28027));
+											n = p[m];
+											j = Z[J];
+											r = Z[b];
+											w = r(O, pX);
+											m = j[w];
+											j = -51688 + 51694;
+											i = n[m];
+											m = -817628 + 817628;
+											n = i(m, j);
+											W[h] = n;
+											j = Q(415035427 % 2546058);
+											i = Z[J];
+											r = 13906555238775 - (-745428);
+											n = Z[b];
+											m = n(j, r);
+											j = Q(714734955 % 10667273);
+											h = i[m];
+											m = p[j];
+											r = Z[J];
+											pX = Q(-924368 - (-952194));
+											w = Z[b];
+											O = w(pX, QX);
+											j = r[O];
+											n = m[j];
+											O, pX = Q(141341 - 113525), 17857543955291 - 393952;
+											j = Z[J];
+											r = Z[b];
+											w = r(O, pX);
+											m = j[w];
+											i = n[m];
+											W[h] = i;
+											i = Z[J];
+											j, QX = Q(-245429 - (-273047)), 461899 + 16845832753753;
+											n = Z[b];
+											r = -965166 + 8115425872113;
+											m = n(j, r);
+											h = i[m];
+											w, i = 32524194547720 - (-963361), L;
+											W[h] = i;
+											n = Z[J];
+											m = Z[b];
+											r = Q(387381 + -359921);
+											j = m(r, w);
+											pX = Q(603964188 % 6424854);
+											i = n[j];
+											j = Q(228648052 % 2286201);
+											m = p[j];
+											r = Z[J];
+											w = Z[b];
+											xX = Q(-592652 - (-620334));
+											O = w(pX, QX);
+											w = -762549 + 762719;
+											j = r[O];
+											O = Q(-50995 - (-78517));
+											n = m[j];
+											j, pX, r = 788826 + -788656, -912032 + 29080329772933, -869064 + 869234;
+											m = n(j, r, w);
+											j = Z[J];
+											r = Z[b];
+											w = r(O, pX);
+											n = j[w];
+											w = Q(304047 + -276095);
+											r = p[w];
+											UX = Q(854385 + -826405);
+											O = Z[J];
+											pX = Z[b];
+											QX = pX(hX, fX);
+											pX = 103277482 % 1324069;
+											w = O[QX];
+											hX = 20279148671466 - (-914169);
+											j = r[w];
+											QX, O, w = Q(-312666 + 340205), -753977 + 754167, 542968 - 542888;
+											r = j(w, O, pX);
+											w = Z[J];
+											O = Z[b];
+											pX = O(QX, hX);
+											j = w[pX];
+											pX = Q(938791 + -910839);
+											O = p[pX];
+											QX = Z[J];
+											hX = Z[b];
+											fX = hX(SX, DX);
+											pX = QX[fX];
+											QX = -774009 + 774159;
+											w = O[pX];
+											pX, hX, SX = 2321502694 % 12154464, -1047442 + 1047697, 3065125503061 - (-836926);
+											O = w(pX, QX, hX);
+											fX = Q(439842 - 412408);
+											pX = Z[J];
+											QX = Z[b];
+											hX = QX(fX, SX);
+											w = pX[hX];
+											hX = Q(682471476 % 4161241);
+											QX = p[hX];
+											fX = Z[J];
+											SX = Z[b];
+											DX = SX(kX, YX);
+											hX = fX[DX];
+											pX = QX[hX];
+											hX, fX, DX, SX = 23108738 % 11554279, 269961077 % 5743851, Q(-165057 + 192666), -549203 - (-549458);
+											QX = pX(hX, fX, SX);
+											hX = Z[J];
+											fX = Z[b];
+											kX = 923915 + 16804406838662;
+											SX = fX(DX, kX);
+											pX = hX[SX];
+											SX = Q(691429 - 663477);
+											fX = p[SX];
+											DX = Z[J];
+											kX = Z[b];
+											YX = kX(UX, ZX);
+											SX = DX[YX];
+											hX = fX[SX];
+											kX, YX, UX, DX, SX = -707983 - (-708033), Q(-1027627 + 1055471), -129844 + 15914869004326, -762050 + 762220, 1460366700 % 15702865;
+											fX = hX(SX, DX, kX);
+											SX = Z[J];
+											DX = Z[b];
+											kX = DX(YX, UX);
+											hX = SX[kX];
+											kX = Q(31936 + -3984);
+											DX = p[kX];
+											YX = Z[J];
+											UX = Z[b];
+											ZX = UX(HX, sX);
+											HX = 4550798296969 - 474946;
+											kX = YX[ZX];
+											YX, UX = 2409164537 % 11257778, -759372 + 759442;
+											SX = DX[kX];
+											kX = -1025004 + 1025259;
+											DX = SX(kX, YX, UX);
+											kX = Z[J];
+											YX = Z[b];
+											ZX = Q(25376690 % 12674577);
+											UX = YX(ZX, HX);
+											SX = kX[UX];
+											UX = Q(928146 - 900194);
+											YX = p[UX];
+											ZX = Z[J];
+											HX = Z[b];
+											sX = HX(bX, JX);
+											UX = ZX[sX];
+											ZX, HX = 2158164166 % 14198448, 19958... (129 KB left)
